@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Menu, X, Download } from "lucide-react";
+import { Mail, Menu, X, Download } from "lucide-react";
 
 export default function PortfolioWebsite() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -297,7 +297,9 @@ export default function PortfolioWebsite() {
                   target="_blank"
                   className="inline-flex items-center gap-2 text-cyan-400"
                 >
-                  <Github size={18} /> View GitHub
+                  {/* <Github size={18} /> */}
+                  
+                   View GitHub
                 </a>
               </div>
             </motion.div>
@@ -356,14 +358,16 @@ export default function PortfolioWebsite() {
               target="_blank"
               className="p-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition"
             >
-              <Github />
+              {/* <Github /> */}
+
             </a>
 
             <a
               href="#"
               className="p-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition"
             >
-              <Linkedin />
+              {/* <Linkedin /> */}
+
             </a>
 
             <a
