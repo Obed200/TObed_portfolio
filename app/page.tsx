@@ -159,8 +159,8 @@ export default function PortfolioWebsite() {
             </a>
 
             <a
-              href="/cv/TWIRINGIYIMANA Obed (Updated CV).pdf"
-              download
+              href="/cv/obed-cv.pdf"
+              download="TWIRINGIYIMANA Obed (Updated CV).pdf"
               className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition flex items-center gap-2"
             >
               <Download size={18} /> Download CV
