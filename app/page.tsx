@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Menu, X, Download } from "lucide-react";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+const typingWords = [
+  "Web Developer",
+  "Cybersecurity Enthusiast",
+  "Startup Builder",
+  "Digital Creator",
+];
+
 export default function PortfolioWebsite() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [text, setText] = useState("");
-
-  const typingWords = [
-    "Web Developer",
-    "Cybersecurity Enthusiast",
-    "Startup Builder",
-    "Digital Creator",
-  ];
 
   useEffect(() => {
     let wordIndex = 0;
@@ -157,7 +159,7 @@ export default function PortfolioWebsite() {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/cv/TWIRINGIYIMANA Obed (Updated CV).pdf"
               download
               className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition flex items-center gap-2"
             >
@@ -297,9 +299,8 @@ export default function PortfolioWebsite() {
                   target="_blank"
                   className="inline-flex items-center gap-2 text-cyan-400"
                 >
-                  {/* <Github size={18} /> */}
-                  
-                   View GitHub
+                 
+                  <FaGithub size={18} /> View GitHub
                 </a>
               </div>
             </motion.div>
@@ -322,7 +323,8 @@ export default function PortfolioWebsite() {
           </h2>
 
           <form
-            action="https://formspree.io/f/your-form-id"
+          
+            action="https://formspree.io/f/mnjrlqgg"
             method="POST"
             className="grid gap-6 text-left"
           >
@@ -341,7 +343,7 @@ export default function PortfolioWebsite() {
             />
 
             <textarea
-              rows="6"
+              rows={6}
               name="message"
               placeholder="Your Message"
               className="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl focus:outline-none focus:border-cyan-400"
@@ -358,16 +360,17 @@ export default function PortfolioWebsite() {
               target="_blank"
               className="p-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition"
             >
-              {/* <Github /> */}
-
+             
+              <FaGithub />
+              
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/in/twiringiyimana-obed-77287632a/"
               className="p-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400 transition"
             >
-              {/* <Linkedin /> */}
-
+              
+              <FaLinkedin />
             </a>
 
             <a
@@ -387,4 +390,3 @@ export default function PortfolioWebsite() {
     </div>
   );
 }
-
