@@ -95,7 +95,9 @@ export default function PortfolioWebsite() {
   // Terminal typing animation
   useEffect(() => {
     if (!isTyping || currentOutputIndex >= terminalOutput.length) {
-      setDisplayedText("");
+      // Only clear displayedText when necessary to avoid unnecessary state updates
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDisplayedText((prev) => (prev !== "" ? "" : prev));
       return;
     }
 
@@ -115,8 +117,8 @@ export default function PortfolioWebsite() {
     return () => clearInterval(interval);
   }, [isTyping, currentOutputIndex, terminalOutput]);
 
-  const executeCommand = (command) => {
-    const commands = {
+  const executeCommand = (command: string) => {
+    const commands: Record<string, { type: string; text: string }[]> = {
       whoami: [
         { type: "command", text: "visitor@obed:~$ whoami" },
         { type: "output", text: "TWIRINGIYIMANA Obed\nIT Student @ University of Rwanda\nFull-Stack Web Developer\nFuture Cybersecurity Engineer\nNetworking & Linux Enthusiast\nStartup-Focused Builder" },
@@ -155,7 +157,7 @@ export default function PortfolioWebsite() {
       ],
       contact: [
         { type: "command", text: "visitor@obed:~$ contact --all" },
-        { type: "output", text: "CONTACT INFORMATION:\n\n📧 Email: obedtwiringiyimana19@gmail.com\n🔗 GitHub: https://github.com/Obed200\n💼 LinkedIn: linkedin.com/in/twiringiyimana-obed\n📍 Location: University of Rwanda\n\nLet's connect and build something amazing together!" },
+        { type: "output", text: "CONTACT INFORMATION:\n\n📧 Email: obedtwiringiyimana19@gmail.com\n🔗 GitHub: https://github.com/Obed200\n💼 LinkedIn: linkedin.com/in/twiringiyimana-obed-77287632a\n📍 Location: University of Rwanda\n\nLet's connect and build something amazing together!" },
       ],
       help: [
         { type: "command", text: "visitor@obed:~$ help" },
@@ -194,6 +196,14 @@ export default function PortfolioWebsite() {
       tech: ["Django", "HTML", "CSS"],
       github: "https://github.com/Obed200",
       liveDemo: "https://obed200.github.io/GSK/index.html",
+    },    
+    {
+      title: "UBWIZA APARTMENT",
+      description:
+        "Professional apartment platform with gallery, messages,booking, video showcase, and responsive design.",
+      tech: ["Django", "HTML", "CSS","JavaScript"],
+      github: "https://github.com/Obed200/UBWIZAAPARTMENT",
+      liveDemo: "https://ubwizaapartement.pythonanywhere.com",
     },
   ];
 
@@ -642,7 +652,7 @@ export default function PortfolioWebsite() {
             />
 
             <textarea
-              rows="6"
+              rows={6}
               name="message"
               placeholder="Your Message"
               className={`p-5 rounded-2xl border backdrop-blur-xl focus:outline-none ${theme === "dark" ? "border-white/10 bg-white/5 focus:border-cyan-400" : "border-gray-300 bg-gray-100 focus:border-blue-600"}`}
